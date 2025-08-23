@@ -1,6 +1,7 @@
 using System;
 using System.Net.Http;
 using System.Threading.Tasks;
+using frontend.Config;
 
 namespace frontend.Models;
 
@@ -8,11 +9,11 @@ public class PingService
 {
     private readonly HttpClient _client;
 
-    public PingService(HttpClient? client = null)
+    public PingService(ApiSettings settings, HttpClient? client = null)
     {
         _client = client ?? new HttpClient
         {
-            BaseAddress = new Uri("http://192.168.1.101:3000")
+            BaseAddress = new Uri(settings.BaseUrl)
         };
     }
 
