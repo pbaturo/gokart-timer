@@ -1,7 +1,8 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <OutputType>Exe</OutputType>
+    <OutputType>WinExe</OutputType>
     <TargetFramework>net8.0</TargetFramework>
+    <AssemblyName>frontend</AssemblyName>
     <Nullable>enable</Nullable>
     <BuiltInComInteropSupport>true</BuiltInComInteropSupport>
     <ApplicationManifest>app.manifest</ApplicationManifest>
@@ -20,7 +21,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <!-- Update all Avalonia packages to version 11.3.4 -->
     <PackageReference Include="Avalonia" Version="11.*" />
     <PackageReference Include="Avalonia.Controls.DataGrid" Version="11.*" />
     <PackageReference Include="Avalonia.Desktop" Version="11.*" />
@@ -29,7 +29,7 @@
 
     <!--Condition below is needed to remove Avalonia.Diagnostics package from build output in Release configuration.-->
     <PackageReference Include="Avalonia.Diagnostics" Version="11.*">
-      <IncludeAssets Condition="'$(Configuration)' != 'Debug'">None</IncludeAssets>
+      <IncludeAssets Condition="'$(Configuration)' == 'Debug'">runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
       <PrivateAssets Condition="'$(Configuration)' != 'Debug'">All</PrivateAssets>
     </PackageReference>
     <PackageReference Include="CommunityToolkit.Mvvm" Version="8.2.1" />
