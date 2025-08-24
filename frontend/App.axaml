@@ -4,8 +4,7 @@
              xmlns:converters="using:frontend.Converters"
              x:Class="frontend.App"
              RequestedThemeVariant="Default">
-             <!-- "Default" ThemeVariant follows system theme variant. "Dark" or "Light" are other available options. -->
-
+             
     <Application.Resources>
         <converters:BoolToColorConverter x:Key="BoolToColorConverter"/>
     </Application.Resources>
@@ -16,7 +15,6 @@
   
     <Application.Styles>
         <FluentTheme />
-        <!-- Add this line to include DataGrid styles -->
         <StyleInclude Source="avares://Avalonia.Controls.DataGrid/Themes/Fluent.xaml"/>
     </Application.Styles>
 </Application>

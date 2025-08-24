@@ -31,7 +31,8 @@ namespace frontend.Models
         {
             _http = client ?? new HttpClient
             {
-                BaseAddress = new Uri(settings.BaseUrl)
+                BaseAddress = new Uri(settings.BaseUrl),
+                Timeout = TimeSpan.FromSeconds(5)
             };
         }
 
@@ -50,7 +51,10 @@ namespace frontend.Models
             {
                 // Można dodać logowanie
                 Console.WriteLine($"Błąd podczas pobierania okrążeń: {ex.Message}");
-                return new List<LapDto>();
+                return new List<LapDto>() {
+                    new LapDto {id = 1, lap = 1, time = 33334},
+                    new LapDto {id = 2, lap = 1, time = 3333}
+                };
             }
         }
     }

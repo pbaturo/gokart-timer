@@ -44,29 +44,9 @@
                           BorderThickness="1"
                           Margin="0">
                     <DataGrid.Columns>
-                        <DataGridTextColumn Header="Kierowca" Binding="{Binding DriverId}" Width="*" />
-                        
-                        <!-- Changed to DataGridTemplateColumn for custom formatting -->
-                        <DataGridTemplateColumn Header="Czas okrążenia" Width="*">
-                            <DataGridTemplateColumn.CellTemplate>
-                                <DataTemplate>
-                                    <TextBlock Text="{Binding LapTime}" 
-                                               FontFamily="Consolas, Courier New, Monospace"
-                                               HorizontalAlignment="Right"
-                                               Margin="0,0,10,0"/>
-                                </DataTemplate>
-                            </DataGridTemplateColumn.CellTemplate>
-                        </DataGridTemplateColumn>
-                        
-                        <!-- Changed to DataGridTemplateColumn for custom formatting -->
-                        <DataGridTemplateColumn Header="Nr okrążenia" Width="*">
-                            <DataGridTemplateColumn.CellTemplate>
-                                <DataTemplate>
-                                    <TextBlock Text="{Binding LapNumber}" 
-                                               HorizontalAlignment="Center"/>
-                                </DataTemplate>
-                            </DataGridTemplateColumn.CellTemplate>
-                        </DataGridTemplateColumn>
+                        <DataGridTextColumn Header="Kierowca" Binding="{Binding DriverId}" Width="*" />                        
+                        <DataGridTextColumn Header="Czas okrążenia" Binding="{Binding LapTime}" Width="*" />
+                        <DataGridTextColumn Header="Nr okrążenia" Binding="{Binding LapNumber}" Width="*" />
                     </DataGrid.Columns>
                     
                     <DataGrid.Styles>

@@ -13,7 +13,8 @@ public class PingService
     {
         _client = client ?? new HttpClient
         {
-            BaseAddress = new Uri(settings.BaseUrl)
+            BaseAddress = new Uri(settings.BaseUrl),
+            Timeout = TimeSpan.FromSeconds(5)
         };
     }
 
