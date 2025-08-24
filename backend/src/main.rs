@@ -79,3 +79,6 @@ fn app() -> Router {
         }))
         .with_state(state)
 }
+
+#[cfg(test)]
+mod tests;
